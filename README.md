@@ -35,19 +35,24 @@ Cela signifie que vous pouvez maintenant créer un graphique à l'aide du bundle
 
     + symfony console make:controller HomeController
 
- 
+/*******HomeController********/ 
 
 use Symfony\UX\Chartjs\Builder\ChartBuilderInterface;
+
 use Symfony\UX\Chartjs\Model\Chart;
 
 class HomeController extends AbstractController
+
 {
+
     /**
      * @Route("/", name="homepage")
      */
+
     public function index(ChartBuilderInterface $chartBuilder): Response
     {
         $chart = $chartBuilder->createChart(Chart::TYPE_LINE);
+
         $chart->setData([
             'labels' => ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
             'datasets' => [
