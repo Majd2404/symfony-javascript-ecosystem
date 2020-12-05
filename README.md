@@ -35,7 +35,8 @@ Cela signifie que vous pouvez maintenant créer un graphique à l'aide du bundle
 
     + symfony console make:controller HomeController
 
-/*******HomeController********/ 
+/***HomeController***/ 
+
 
 use Symfony\UX\Chartjs\Builder\ChartBuilderInterface;
 
@@ -72,6 +73,7 @@ class HomeController extends AbstractController
         ]);
     }
 }
+
 
 8. Une fois créé en PHP, un graphique peut être affiché en utilisant Twig:
 
