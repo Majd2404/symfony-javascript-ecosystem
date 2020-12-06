@@ -1,37 +1,40 @@
 # Symfony UX: building highly interactive applications by leveraging JavaScript giants¶
   Symfony UX is a series of tools to create a bridge between Symfony and the JavaScript ecosystem. It stands on the shoulders of JavaScript giants: npm, Webpack Encore and Stimulus.
 
-1. Créez un projet symfony 5 et nommez-le "symfony-javaScript-ecosystem"
+1. Create a symfony 5 project and name it for example: "symfony-javaScript-ecosystem"
 
     + composer create-project symfony/website-skeleton:"5.2.x@dev" symfony-javaScript-ecosystem
+
+2. Run Symfony Local Web Server  
+
     + symfony server:start
-    OU
+    OR
     + symfony server:start -d (démarrer le serveur en background) 
 
-2. Pour utiliser Symfony UX, mettez d'abord à jour vos dépendances Symfony Flex et Webpack Encore:
+3. To use Symfony UX, first update your Symfony Flex and Webpack Encore dependencies:
 
     + composer update symfony/flex
-    OU
+    OR
     + yarn upgrade "@symfony/webpack-encore@^0.32.0"
 
-3. Symfony Flex réagira à chaque package PHP que vous installez contenant du code JavaScript. Par exemple, vous pouvez maintenant installer le composant Chart.js:
+4. Symfony Flex will react to every PHP package you install that contains JavaScript code. For example, you can now install the Chart.js component:
 
     + composer require symfony/ux-chartjs
 
-4. Symfony Flex vient de synchroniser le fichier package.json de votre projet avec le package PHP Chartjs  que vous avez installé. Vous trouverez maintenant dans ce fichier un nouveau module JavaScript.
+5. Symfony Flex has just synchronized the package.json file of your project with the Chartjs PHP package that you installed. You will now find in this file(package.json) a new JavaScript module.
 
-Symfony Flex a également mis à jour un nouveau fichier assets / controllers.json dans votre projet. Ce fichier référence tous les contrôleurs Stimulus fournis par les packages Symfony UX installés pour permettre à Webpack Encore de les ajouter à vos fichiers JavaScript créés.
+Symfony Flex has also updated a new assets / controllers.json file in your project. This file references all the Stimulus controllers provided by the installed Symfony UX packages to allow Webpack Encore to add them to your created JavaScript files.
 
-5. En raison de ces modifications, vous devez maintenant installer les nouvelles dépendances JavaScript et compiler les nouveaux fichiers:
+6. Due to these changes, you should now install the new JavaScript dependencies and compile the new files:
 
     + yarn install --force
     + yarn encore dev
 
-6. c'est ça! En exploitant Symfony Flex, Symfony UX Chart.js a été installé et configuré à la fois en tant que bundle Symfony en PHP et en tant que bibliothèque JavaScript compilée dans les fichiers intégrés de votre application.
+7. that's it! By leveraging Symfony Flex, Symfony UX Chart.js has been installed and configured both as a Symfony bundle in PHP and as a JavaScript library compiled into your application's built-in files.
 
-Cela signifie que vous pouvez maintenant créer un graphique à l'aide du bundle.
+This means that you can now create a chart using the bundle.
 
-7. Créez votre  Controller avec la commande make:controller : 
+8. Create your Controller with the command make:controller : 
 
     + symfony console make:controller HomeController
 
@@ -69,6 +72,6 @@ Cela signifie que vous pouvez maintenant créer un graphique à l'aide du bundle
 
 
 
-8. Une fois créé en PHP, un graphique peut être affiché en utilisant Twig:
+9. Once created in PHP, a chart can be displayed using Twig:
 
 {{ render_chart(chart) }}
