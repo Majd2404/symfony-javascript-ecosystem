@@ -30,7 +30,7 @@ Symfony Flex has also updated a new assets / controllers.json file in your proje
     + yarn install --force
     + yarn encore dev
 
-7. that's it! By leveraging Symfony Flex, Symfony UX Chart.js has been installed and configured both as a Symfony bundle in PHP and as a JavaScript library compiled into your application's built-in files.
+7. That's it! By leveraging Symfony Flex, Symfony UX Chart.js has been installed and configured both as a Symfony bundle in PHP and as a JavaScript library compiled into your application's built-in files.
 
 This means that you can now create a chart using the bundle.
 
